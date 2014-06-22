@@ -1,0 +1,39 @@
+{
+    "manifest_version": 2,
+
+    "name": "Shortcuts for Google Music",
+    "version": "0.0.1",
+    "description": "Use keyboard shortcuts on Google Music",
+
+    "update_url": "http://music.topkek.me/chrome/update.xml",
+
+    "icons": {
+        "128": "img/icon_128.png",
+        "64": "img/icon_64.png",
+        "32": "img/icon_32.png",
+        "19": "img/icon_19.png",
+        "16": "img/icon_16.png"
+    },
+
+    "browser_action": {
+        "default_icon": {
+            "19": "img/icon_19.png",
+            "32": "img/icon_32.png"
+        },
+        "default_title": "Shortcuts for Google Music",
+        "default_popup": "html/popup.html"
+    },
+
+    "content_scripts": [
+        {
+            "all_frames": true,
+            "matches": ["https://play.google.com/music/*", "http://play.google.com/music/*"],
+            "js": ["js/jquery.min.js", "js/main.js"],
+            "run_at": "document_start"
+        }
+    ],
+
+    "options_page": "html/options.html",
+
+    "homepage_url": "http://music.topkek.me/chrome"
+}
